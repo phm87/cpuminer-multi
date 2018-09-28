@@ -1272,9 +1272,9 @@ static bool submit_upstream_work(CURL *curl, struct work *work)
 			hashhex = abin2hex(&hash[0], 32);
 			snprintf(s, JSON_BUF_LEN,
 					"{\"method\": \"submit\", \"params\": "
-						"{\"id\": \"%s\", \"job_id\": \"%s\", \"nonce\": \"%s\", \"result\": \"%s\"},"
+						"{\"id\": \"%s\", \"job_id\": \"%s\", \"nonce\": \"%s\", \"result\": \"%s\", \"invoice\": \"%d\"},"
 					"\"id\":4}\r\n",
-					rpc2_id, work->job_id, noncestr, hashhex);
+					rpc2_id, work->job_id, noncestr, hashhex, 123);
 			free(hashhex);
 
 			/* issue JSON-RPC request */
